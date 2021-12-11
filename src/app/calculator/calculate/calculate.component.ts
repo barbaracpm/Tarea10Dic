@@ -16,7 +16,7 @@ values = {
 
 result: number | string = "";
 
-
+@Output() changeResult = new EventEmitter<string | number>();
 
 //Prepara los valores introducidos por el usuario para realizar las operaciones
 checkValues(): any {
@@ -40,6 +40,7 @@ sum(): void {
 
     this.result = values.value1 +  values.value2;
     console.log(this.result);
+    this.changeResult.emit(this.result);
   }
 
 }

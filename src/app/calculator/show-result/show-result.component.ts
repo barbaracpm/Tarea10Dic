@@ -6,8 +6,8 @@ import { CalculatorComponent } from '../calculator.component';
   templateUrl: './show-result.component.html',
   styleUrls: ['./show-result.component.css']
 })
+
 export class ShowResultComponent {
 
- 
-
+@Input() resultSon: number | string = "";
 }

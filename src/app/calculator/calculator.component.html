@@ -1,2 +1,2 @@
-<app-calculate></app-calculate>
-<app-show-result></app-show-result>
+<app-calculate (changeResult)="resultFather = $event"></app-calculate>
+<app-show-result [resultSon] = "resultFather"></app-show-result>

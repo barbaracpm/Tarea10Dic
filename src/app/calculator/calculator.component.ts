@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
@@ -8,5 +8,6 @@ import { Component} from '@angular/core';
 
 export class CalculatorComponent {
 
-  
+  @Input() resultFather: number | string = "";
+
 }
