@@ -1,1 +1,12 @@
-<p>calculate works!</p>
+<h1>Calculadora Angular</h1>
+
+    <form (ngSubmit) ="getInputs()" class="form">
+        <input type="text" class="valor1" name= "value1" placeholder="Introduzca nº" [(ngModel)] ="new.value1">
+        <input type="text" class="valor2" name="value2" placeholder="Introduzca nº" [(ngModel)] = "new.value2">
+        <button type="submit" class="btn sumar"> + </button>
+        <button type= "submit" class="btn restar"> - </button>
+        <button type="submit" class="btn multiplicar"> * </button>
+        <button type="submit" class="btn dividir"> / </button>
+        <button type="submit" class="btn reset"> RESET </button>
+
+    </form>

@@ -5,8 +5,8 @@ import { Component} from '@angular/core';
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css']
 })
+
 export class CalculatorComponent {
-
-
-
+value1: string = "";
+value2: string = "";
 }
