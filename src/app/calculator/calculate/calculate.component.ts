@@ -1,34 +1,91 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
-import { CalculatorComponent } from '../calculator.component';
 
 @Component({
   selector: 'app-calculate',
   templateUrl: './calculate.component.html',
   styleUrls: ['./calculate.component.css']
 })
+
+
 export class CalculateComponent {
 
-  //@Input() values: CalculatorComponent[] = []
+values = {
+  value1: "",
+  value2: ""
+}
 
-new: CalculatorComponent = {
-value1: "",
-value2: ""
+result: number | string = "";
+
+
+
+//Prepara los valores introducidos por el usuario para realizar las operaciones
+checkValues(): any {
+  if(this.values.value1.trim().length !== 0 && this.values.value2.trim().length !== 0) {
+    //console.log(this.values);
+    //console.log(typeof this.values);
+    return {value1: parseInt(this.values.value1), value2:parseInt(this.values.value2)};
+  }
+
+  return;
+
 }
 
 
-//lanzar un evento de un componente hijo para que lo reciba el padre
-@Output() onNewCalculatorComponent: EventEmitter<CalculatorComponent> = new EventEmitter();
 
-getInputs() {
-  if(this.new.value1.trim().length === 0 && this.new.value2.trim().length === 0) {
-    return;
+sum(): void {
+
+  const values = this.checkValues();
+
+  if (values !== undefined) {
+
+    this.result = values.value1 +  values.value2;
+    console.log(this.result);
   }
-  console.log(this.new)
-  this.onNewCalculatorComponent.emit(this.new)
-  // this.new = {
-  //   value1:"",
-  //   value2:""
-  // }
+
+}
+
+substract(): void {
+
+  const values = this.checkValues();
+
+  if (values !== undefined) {
+
+    this.result = values.value1 -  values.value2;
+    console.log(this.result);
+  }
+
+}
+
+multiply(): void {
+
+  const values = this.checkValues();
+
+  if (values !== undefined) {
+
+    this.result = values.value1 *  values.value2;
+    console.log(this.result);
+  }
+
+}
+
+
+divide(): void {
+
+  const values = this.checkValues();
+
+  if (values !== undefined) {
+    this.result = values.value1 /  values.value2;
+    console.log(this.result);
+  }
+
+}
+
+reset(): void {
+
+  this.values = {
+    value1: "",
+    value2: ""
+  }
 
 }
 

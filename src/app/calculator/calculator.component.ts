@@ -7,6 +7,6 @@ import { Component} from '@angular/core';
 })
 
 export class CalculatorComponent {
-value1: string = "";
-value2: string = "";
+
+  
 }

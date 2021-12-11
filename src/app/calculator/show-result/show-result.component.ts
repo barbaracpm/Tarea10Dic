@@ -8,6 +8,6 @@ import { CalculatorComponent } from '../calculator.component';
 })
 export class ShowResultComponent {
 
- @Input() new:CalculatorComponent = { value1: "", value2: ""};
+ 
 
 }
