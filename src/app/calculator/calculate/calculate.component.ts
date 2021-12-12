@@ -53,6 +53,8 @@ substract(): void {
 
     this.result = values.value1 -  values.value2;
     console.log(this.result);
+    this.changeResult.emit(this.result);
+
   }
 
 }
@@ -65,6 +67,8 @@ multiply(): void {
 
     this.result = values.value1 *  values.value2;
     console.log(this.result);
+    this.changeResult.emit(this.result);
+
   }
 
 }
@@ -77,6 +81,8 @@ divide(): void {
   if (values !== undefined) {
     this.result = values.value1 /  values.value2;
     console.log(this.result);
+    this.changeResult.emit(this.result);
+
   }
 
 }
@@ -87,6 +93,10 @@ reset(): void {
     value1: "",
     value2: ""
   }
+
+  this.result= "";
+  this.changeResult.emit(this.result);
+
 
 }
 
